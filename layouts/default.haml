@@ -1,0 +1,38 @@
+!!!xml
+!!!5
+%html
+    %head
+        %meta(charset="utf-8")
+        %meta(httpEquiv="X-UA-Compatible", content="chrome=1")
+        %meta(name="description", content="Introduction to Server-Side Programming with PHP : VCC DIG 1108 FALL 2012")
+
+        %link(rel="stylesheet", type="text/css", media="screen", href="stylesheets/stylesheet.css")
+
+        %title ${self.title()}
+            - if self.extra_title():
+                &mdash; ${self.extra_title()}
+
+    %body
+        <!-- HEADER -->
+        %div(id="header_wrap", class_="outer")
+            %header(class_="inner")
+                %a(id="forkme_banner", href="https://github.com/vcc-dig1108-fall2012") View on GitHub
+
+                %h1(id="project_title")
+                    %%block(name="title")
+                %h2(id="project_tagline")
+                    %%block(name="extra_title")
+
+        <!-- MAIN CONTENT -->
+        %div(id="main_content_wrap", class_="outer")
+            %section(id="main_content", class_="inner")
+                ${self.body()}
+
+        :javascript
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+        :javascript
+            try {
+                var pageTracker = _gat._getTracker("UA-10465474-3");
+                pageTracker._trackPageview();
+            } catch(err) {}
